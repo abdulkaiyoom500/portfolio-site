@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohamed Abdul Kaiyoom – Cybersecurity Portfolio</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #121822;
+      --muted: #7f8aa1;
+      --text: #e8eef9;
+      --accent: #4da3ff;
+    }
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    a { color: var(--accent); }
+    .navbar {
+      background: rgba(18, 24, 34, .8) !important;
+      backdrop-filter: blur(8px);
+    }
+    .hero {
+      padding: 80px 0 40px;
+      background:
+        radial-gradient(1200px 500px at 80% -20%, rgba(77,163,255,.18), transparent 60%),
+        radial-gradient(1000px 400px at -10% 10%, rgba(255,255,255,.06), transparent 60%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .avatar {
+      width: 140px; height: 140px; object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,.15);
+      box-shadow: 0 12px 35px rgba(0,0,0,.45);
+    }
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--muted);
+      font-size: .85rem;
+      margin: 0 6px 6px 0;
+    }
+    .btn-accent {
+      background: var(--accent);
+      border: none;
+      color: #00152b;
+      font-weight: 700;
+    }
+    .btn-accent:hover { filter: brightness(1.05); }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      color: var(--text);
+    }
+    .card .btn { border-radius: 10px; }
+    .section-title {
+      font-weight: 800; letter-spacing: .3px;
+    }
+    footer {
+      border-top: 1px solid rgba(255,255,255,.06);
+      color: var(--muted);
+    }
+    .muted { color: var(--muted); }
+    /* Light mode (toggled via JS) */
+    body.light {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --muted: #5c6b8a;
+      --text: #0c1220;
+      --accent: #2563eb;
+    }
+    body.light .navbar { background: rgba(255,255,255,.85) !important; }
+    .project-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .grid-12 { grid-column: span 12; }
+    .grid-6 { grid-column: span 6; }
+    .grid-4 { grid-column: span 4; }
+    @media (max-width: 992px) {
+      .grid-6, .grid-4 { grid-column: span 12; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"><i class="fa-solid fa-shield-halved me-2"></i>Abdul Kaiyoom</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-2">
+            <button id="modeBtn" class="btn btn-sm btn-outline-light"><i class="fa-solid fa-moon me-2"></i>Theme</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container pt-5">
+      <div class="row align-items-center gy-4">
+        <div class="col-md-3 text-center">
+          <!-- Put your image at /assets/profile.jpg (see notes below) -->
+          <img src="assets/profile.jpg" alt="Profile photo" class="avatar">
+        </div>
+        <div class="col-md-9">
+          <h1 class="display-6 fw-bold">Mohamed Abdul Kaiyoom</h1>
+          <p class="lead muted mb-3">MSc Cyber Security • SOC Analyst (1.9 yrs) • SIEM • Forensics • IoT • Attack–Defense</p>
+          <div class="mb-3">
+            <span class="tag"><i class="fa-solid fa-sitemap me-1"></i> Splunk / Wazuh</span>
+            <span class="tag"><i class="fa-solid fa-network-wired me-1"></i> IDS/IPS (Snort/Suricata)</span>
+            <span class="tag"><i class="fa-solid fa-cloud me-1"></i> AWS Security</span>
+            <span class="tag"><i class="fa-solid fa-code me-1"></i> Python / C# / SQL</span>
+            <span class="tag"><i class="fa-solid fa-bug me-1"></i> Offensive & Defensive Labs</span>
+          </div>
+          <div class="d-flex gap-2">
+            <a class="btn btn-accent" href="#projects"><i class="fa-solid fa-folder-open me-2"></i>View Projects</a>
+            <a class="btn btn-outline-light" href="https://github.com/abdulkaiyoom500" target="_blank"><i class="fa-brands fa-github me-2"></i>GitHub</a>
+            <a class="btn btn-outline-light" href="https://www.linkedin.com/in/mohamed-abdul-kaiyoom-haroon-muzammil-348313200/" target="_blank"><i class="fa-brands fa-linkedin me-2"></i>LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Projects -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-3">Projects</h2>
+      <p class="muted mb-4">Case-study style write-ups with code, configs, and screenshots. Links go straight to the right folder in your portfolio repo.</p>
+
+      <div class="project-grid">
+        <!-- 1. Splunk SIEM -->
+        <div class="card p-3 grid-6">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">SIEM & Threat Monitoring (Splunk) – Home Lab</h5>
+            <p class="card-text">Implemented Linux log monitoring, dashboards for brute-force & anomaly detection, and correlation searches for alerting.</p>
+            <a class="btn btn-accent me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/splunk-siem"><i class="fa-brands fa-github me-1"></i>View on GitHub</a>
+          </div>
+        </div>
+
+        <!-- 2. Digital Forensics USB/Workstation -->
+        <div class="card p-3 grid-6">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Digital Forensics – Workstation & USB</h5>
+            <p class="card-text">Acquired with FTK Imager, verified hashes, analyzed with Autopsy for recovery, metadata & timeline, produced a defensible report.</p>
+            <a class="btn btn-accent me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/digital-forensics-usb"><i class="fa-brands fa-github me-1"></i>View on GitHub</a>
+          </div>
+        </div>
+
+        <!-- 3. Mobile & USB Forensics + Crypto Tracking -->
+        <div class="card p-3 grid-6">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Mobile & USB Forensics with Cryptocurrency Tracking</h5>
+            <p class="card-text">Cellebrite extraction, ExifTool metadata analysis, detected steganography, decrypted communications, correlated wallet logs.</p>
+            <a class="btn btn-accent me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/mobile-crypto-forensics"><i class="fa-brands fa-github me-1"></i>View on GitHub</a>
+          </div>
+        </div>
+
+        <!-- 4. Kali/Ubuntu Attack–Defense -->
+        <div class="card p-3 grid-6">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Cyber Range – Kali Linux & Ubuntu Attack-Defense Lab</h5>
+            <p class="card-text">Simulated brute-force, DoS, SQLi, XSS, MITM. Hardened Ubuntu (UFW) and deployed Snort with tuned detection rules.</p>
+            <a class="btn btn-accent me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cyber-range-attack-defense"><i class="fa-brands fa-github me-1"></i>View on GitHub</a>
+          </div>
+        </div>
+
+        <!-- 5. Secure IoT (Dissertation) -->
+        <div class="card p-3 grid-6">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Secure IoT Communication Framework (Dissertation)</h5>
+            <p class="card-text">Dockerized IoT devices to MQTT (Mosquitto) over TLS 1.2; validated encryption via Wireshark and simulated flows in OMNeT++.</p>
+            <a class="btn btn-accent me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/secure-iot-dissertation"><i class="fa-brands fa-github me-1"></i>View on GitHub</a>
+          </div>
+        </div>
+
+        <!-- 6. ASP.NET E-commerce -->
+        <div class="card p-3 grid-6">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">E-Commerce Websites (ASP.NET, C#)</h5>
+            <p class="card-text">Multiple Razor Pages apps with SQL auth (login/register), product catalog, and checkout—secure coding & validation focus.</p>
+            <a class="btn btn-accent me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/ecommerce-aspnet"><i class="fa-brands fa-github me-1"></i>View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-3">Skills</h2>
+      <div class="mb-2">
+        <span class="tag"><i class="fa-solid fa-eye me-1"></i> SIEM (Splunk, Wazuh)</span>
+        <span class="tag"><i class="fa-solid fa-shield me-1"></i> IDS/IPS (Snort, Suricata)</span>
+        <span class="tag"><i class="fa-solid fa-network-wired me-1"></i> Networking, VPN, FW</span>
+        <span class="tag"><i class="fa-solid fa-magnifying-glass me-1"></i> Forensics (FTK, Autopsy, Cellebrite)</span>
+        <span class="tag"><i class="fa-solid fa-cloud me-1"></i> AWS IAM, GuardDuty</span>
+        <span class="tag"><i class="fa-solid fa-code me-1"></i> Python, C#, SQL</span>
+        <span class="tag"><i class="fa-solid fa-laptop-code me-1"></i> ASP.NET, HTML/CSS/Bootstrap</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-3">Contact</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <a class="btn w-100 btn-outline-light" href="mailto:abdulkaiyoomwork@gmail.com"><i class="fa-solid fa-envelope me-2"></i>Email</a>
+        </div>
+        <div class="col-md-4">
+          <a class="btn w-100 btn-outline-light" target="_blank" href="https://github.com/abdulkaiyoom500"><i class="fa-brands fa-github me-2"></i>GitHub</a>
+        </div>
+        <div class="col-md-4">
+          <a class="btn w-100 btn-outline-light" target="_blank" href="https://www.linkedin.com/in/mohamed-abdul-kaiyoom-haroon-muzammil-348313200/"><i class="fa-brands fa-linkedin me-2"></i>LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center">
+    <div class="container">
+      <div class="small">© <span id="year"></span> Mohamed Abdul Kaiyoom — Cybersecurity Portfolio</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap + minimal JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a.nav-link[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
+      });
+    });
+
+    // Theme toggle with localStorage
+    const modeBtn = document.getElementById('modeBtn');
+    const key = 'site-theme';
+    const apply = v => document.body.classList.toggle('light', v === 'light');
+    apply(localStorage.getItem(key) || 'dark');
+    modeBtn.addEventListener('click', ()=>{
+      const cur = document.body.classList.contains('light') ? 'light' : 'dark';
+      const next = cur === 'light' ? 'dark' : 'light';
+      localStorage.setItem(key, next);
+      apply(next);
+    });
+  </script>
+</body>
+</html>
