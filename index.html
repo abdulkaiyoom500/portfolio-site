@@ -148,6 +148,11 @@
       border-top:1px solid var(--border);
       color: var(--muted);
     }
+
+    /* skills groups */
+    .group-title{font-weight:800; letter-spacing:.2px; margin:18px 0 8px;}
+    .skills-groups .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;}
+
   </style>
 </head>
 <body>
@@ -176,7 +181,7 @@
         <div class="col-lg-8">
           <h1 class="headline display-5 glow">Mohamed Abdul Kaiyoom</h1>
           <p class="lead mt-2">
-            MSc Cyber Security • SOC Analyst (1.9 yrs) • SIEM • Forensics • IoT • Attack–Defense
+            MSc Cyber Security (Nottingham Trent University, UK) • SOC Analyst (1.9 yrs) • SIEM • Forensics • IoT • Attack–Defense • CLM • PKI • Cloud Security
           </p>
           <div class="d-flex flex-wrap gap-2">
             <a class="btn btn-cta" href="#projects"><i class="fa-solid fa-folder-open me-2"></i>View Projects</a>
@@ -300,26 +305,96 @@
 
   <!-- SKILLS / LOGOS -->
   <section id="skills" class="section">
-    <div class="container">
-      <h2>Skills</h2>
-      <p class="sub">Security operations, network defense, cloud security & full-stack fundamentals.</p>
-      <div class="mb-3">
-        <span class="chip"><i class="fa-solid fa-eye"></i> SIEM: Splunk, Wazuh</span>
-        <span class="chip"><i class="fa-solid fa-shield"></i> IDS/IPS: Snort, Suricata</span>
-        <span class="chip"><i class="fa-solid fa-network-wired"></i> Networking, VPN, FW</span>
-        <span class="chip"><i class="fa-solid fa-magnifying-glass"></i> Forensics: FTK, Autopsy, Cellebrite</span>
-        <span class="chip"><i class="fa-solid fa-cloud"></i> AWS IAM, GuardDuty</span>
-        <span class="chip"><i class="fa-solid fa-code"></i> Python, C#, SQL • ASP.NET</span>
+  <div class="container">
+    <h2>Skills</h2>
+    <p class="sub">Security operations, network defense, cloud security & full-stack fundamentals.</p>
+
+    <div class="skills-groups">
+
+      <h5 class="group-title"><i class="fa-solid fa-screwdriver-wrench me-2"></i>Security Tools & Platforms</h5>
+      <div class="chips">
+        <span class="chip"><i class="fa-solid fa-wave-square"></i> Wireshark</span>
+        <span class="chip"><i class="fa-solid fa-network-wired"></i> Nmap</span>
+        <span class="chip"><i class="fa-solid fa-magnifying-glass"></i> Autopsy</span>
+        <span class="chip"><i class="fa-solid fa-mobile-screen-button"></i> Cellebrite Physical Analyzer</span>
+        <span class="chip"><i class="fa-brands fa-docker"></i> Docker</span>
+        <span class="chip"><i class="fa-solid fa-desktop"></i> VMware</span>
+        <span class="chip"><i class="fa-solid fa-laptop"></i> VirtualBox</span>
+        <span class="chip"><i class="fa-solid fa-diagram-project"></i> OMNeT++</span>
+        <span class="chip"><i class="fa-solid fa-spider"></i> Burp Suite</span>
+        <span class="chip"><i class="fa-solid fa-shield-halved"></i> OWASP ZAP</span>
+        <span class="chip"><i class="fa-solid fa-bullseye"></i> Nessus</span>
+        <span class="chip"><i class="fa-solid fa-eye"></i> Splunk</span>
+        <span class="chip"><i class="fa-solid fa-flask"></i> DVWA</span>
+        <span class="chip"><i class="fa-solid fa-wifi"></i> Mosquitto MQTT Broker</span>
       </div>
 
-      <!-- Optional logo strip (upload your own SVG/PNGs) -->
-      <div class="logos">
-        <!-- <img class="logo" src="assets/logos/splunk.svg" alt="Splunk"> -->
-        <!-- <img class="logo" src="assets/logos/paloalto.svg" alt="Palo Alto"> -->
-        <!-- <img class="logo" src="assets/logos/aws.svg" alt="AWS"> -->
+      <h5 class="group-title"><i class="fa-solid fa-shield-halved me-2"></i>Cybersecurity</h5>
+      <div class="chips">
+        <span class="chip"><i class="fa-solid fa-fingerprint"></i> Digital Forensics</span>
+        <span class="chip"><i class="fa-solid fa-triangle-exclamation"></i> Vulnerability Assessment</span>
+        <span class="chip"><i class="fa-solid fa-user-ninja"></i> Penetration Testing</span>
+        <span class="chip"><i class="fa-solid fa-network-wired"></i> Traffic Analysis</span>
+        <span class="chip"><i class="fa-solid fa-headset"></i> Incident Response</span>
+        <span class="chip"><i class="fa-solid fa-eye"></i> SIEM (Splunk, Wazuh)</span>
+        <span class="chip"><i class="fa-solid fa-key"></i> PKI</span>
+        <span class="chip"><i class="fa-solid fa-lock"></i> SSL/TLS</span>
+        <span class="chip"><i class="fa-solid fa-bolt"></i> MITM & DoS Simulation</span>
+        <span class="chip"><i class="fa-solid fa-shield"></i> IDS/IPS (Snort, Suricata)</span>
+        <span class="chip"><i class="fa-solid fa-network-wired"></i> Networking, VPN, FW</span>
       </div>
+
+      <h5 class="group-title"><i class="fa-solid fa-cloud me-2"></i>Cloud & Infrastructure Security</h5>
+      <div class="chips">
+        <span class="chip"><i class="fa-solid fa-user-lock"></i> AWS IAM</span>
+        <span class="chip"><i class="fa-solid fa-route"></i> CloudTrail</span>
+        <span class="chip"><i class="fa-solid fa-shield-halved"></i> GuardDuty</span>
+        <span class="chip"><i class="fa-solid fa-database"></i> S3 Encryption</span>
+        <span class="chip"><i class="fa-solid fa-fire"></i> Firewall Hardening</span>
+        <span class="chip"><i class="fa-solid fa-user-lock"></i> Identity & Access Management</span>
+      </div>
+
+      <h5 class="group-title"><i class="fa-solid fa-code me-2"></i>Programming & Web Development</h5>
+      <div class="chips">
+        <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
+        <span class="chip"><i class="fa-brands fa-java"></i> Java</span>
+        <span class="chip"><i class="fa-brands fa-microsoft"></i> C#</span>
+        <span class="chip"><i class="fa-solid fa-database"></i> SQL</span>
+        <span class="chip"><i class="fa-brands fa-html5"></i> HTML</span>
+        <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+        <span class="chip"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+        <span class="chip"><i class="fa-brands fa-windows"></i> ASP.NET Core</span>
+        <span class="chip"><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+      </div>
+
+      <h5 class="group-title"><i class="fa-solid fa-scale-balanced me-2"></i>Concepts & Standards</h5>
+      <div class="chips">
+        <span class="chip"><i class="fa-solid fa-list-check"></i> OWASP Top 10</span>
+        <span class="chip"><i class="fa-solid fa-repeat"></i> Secure SDLC</span>
+        <span class="chip"><i class="fa-solid fa-key"></i> Cryptography</span>
+        <span class="chip"><i class="fa-solid fa-certificate"></i> ISO 27001 (basic)</span>
+        <span class="chip"><i class="fa-solid fa-clipboard-check"></i> Compliance & Risk Assessment</span>
+        <span class="chip"><i class="fa-solid fa-landmark"></i> NIST</span>
+      </div>
+
+      <h5 class="group-title"><i class="fa-solid fa-toolbox me-2"></i>Other Tools</h5>
+      <div class="chips">
+        <span class="chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+        <span class="chip"><i class="fa-brands fa-jira"></i> Jira</span>
+        <span class="chip"><i class="fa-solid fa-plug"></i> Postman</span>
+        <span class="chip"><i class="fa-solid fa-people-group"></i> Agile Scrum</span>
+      </div>
+
     </div>
-  </section>
+
+    <!-- Optional logo strip (upload your own SVG/PNGs) -->
+    <div class="logos mt-3">
+      <!-- <img class="logo" src="assets/logos/splunk.svg" alt="Splunk"> -->
+      <!-- <img class="logo" src="assets/logos/paloalto.svg" alt="Palo Alto"> -->
+      <!-- <img class="logo" src="assets/logos/aws.svg" alt="AWS"> -->
+    </div>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contact" class="section">
