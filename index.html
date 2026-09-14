@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Mohamed Abdul Kaiyoom – Cybersecurity Portfolio</title>
 
   <!-- Bootstrap & Icons -->
@@ -17,14 +18,18 @@
       --bg: #070b12;
       --text: #e8eef9;
       --muted: #93a0b8;
-      --accent: #4fd1ff; /* cyan-blue */
-      --accent2: #00ffa6; /* neon green */
+      --accent: #4fd1ff;
+      --accent2: #00ffa6;
       --card: #0e1522;
       --border: rgba(255,255,255,.08);
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -43,7 +48,8 @@
       text-decoration: underline;
     }
 
-    /* ===== NAV (forced light text on dark) ===== */
+    /* ===== NAV ===== */
+
     .navbar {
       background: rgba(8,12,20,.7) !important;
       backdrop-filter: blur(10px);
@@ -65,15 +71,21 @@
       border-color: rgba(255,255,255,.4);
     }
 
-    /* ===== HERO (reduced height to remove big gap) ===== */
+    /* ===== HERO ===== */
+
     .hero {
       position: relative;
-      min-height: 62vh; /* was 80vh */
+      min-height: 62vh;
       display: grid;
       align-items: center;
       border-bottom: 1px solid var(--border);
+
       background:
-        linear-gradient(180deg, rgba(7,11,18,.45), rgba(7,11,18,.9)),
+        linear-gradient(
+          180deg,
+          rgba(7,11,18,.45),
+          rgba(7,11,18,.9)
+        ),
         url("assets/mrrobot.jpg") center/cover no-repeat fixed;
     }
 
@@ -84,20 +96,26 @@
 
     .hero .lead {
       color: var(--muted);
-      max-width: 760px;
+      max-width: 800px;
     }
 
     .glow {
       text-shadow: 0 0 12px rgba(79,209,255,.6);
     }
 
-    /* avatar */
+    /* ===== AVATAR ===== */
+
     .avatar-wrap {
       position: relative;
       display: inline-block;
       padding: 8px;
       border-radius: 50%;
-      background: radial-gradient(120px 120px at 50% 40%, rgba(0,255,166,.35), rgba(79,209,255,.25));
+      background:
+        radial-gradient(
+          120px 120px at 50% 40%,
+          rgba(0,255,166,.35),
+          rgba(79,209,255,.25)
+        );
       box-shadow: 0 18px 60px rgba(0,0,0,.5);
     }
 
@@ -109,11 +127,22 @@
       border: 3px solid var(--border);
     }
 
+    /* ===== BUTTONS ===== */
+
     .btn-cta {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent2)
+      );
       color: #071018;
       border: none;
       font-weight: 800;
+    }
+
+    .btn-cta:hover {
+      color: #071018;
+      opacity: .9;
     }
 
     .btn-ghost {
@@ -121,9 +150,15 @@
       color: #d9e4ff;
     }
 
-    /* ===== SECTION SPACING (tightened) ===== */
+    .btn-ghost:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ===== SECTION ===== */
+
     .section {
-      padding: 48px 0; /* was 64px */
+      padding: 48px 0;
     }
 
     .section h2 {
@@ -137,6 +172,7 @@
     }
 
     /* ===== PROJECT GRID ===== */
+
     .project-grid {
       display: grid;
       gap: 20px;
@@ -162,12 +198,22 @@
       }
     }
 
+    /* ===== PROJECT CARDS ===== */
+
     .cardx {
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.03),
+          rgba(255,255,255,.015)
+        );
+
       border: 1px solid var(--border);
       border-radius: 18px;
       overflow: hidden;
-      transition: transform .25s ease, box-shadow .25s ease;
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
     }
 
     .cardx:hover {
@@ -181,7 +227,7 @@
       height: 210px;
       object-fit: cover;
       border-bottom: 1px solid var(--border);
-      background: #0b1320; /* fallback if image missing */
+      background: #0b1320;
     }
 
     .cardx .body {
@@ -198,7 +244,8 @@
       margin-bottom: 14px;
     }
 
-    /* ===== Skills groups ===== */
+    /* ===== SKILLS ===== */
+
     .group-title {
       font-weight: 800;
       letter-spacing: .2px;
@@ -212,7 +259,25 @@
       margin-bottom: 10px;
     }
 
-    /* ===== Experience timeline ===== */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      color: #dfe8f7;
+      font-size: .95rem;
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ===== EXPERIENCE TIMELINE ===== */
+
     .timeline {
       border-left: 2px solid var(--border);
       margin-left: 6px;
@@ -221,7 +286,7 @@
 
     .t-item {
       position: relative;
-      margin-bottom: 18px;
+      margin-bottom: 30px;
     }
 
     .t-item::before {
@@ -238,6 +303,7 @@
 
     .role {
       font-weight: 700;
+      font-size: 1.05rem;
     }
 
     .company {
@@ -249,387 +315,1246 @@
       font-size: .95rem;
     }
 
+    .timeline ul {
+      padding-left: 20px;
+    }
+
+    .timeline li {
+      margin-bottom: 8px;
+    }
+
+    /* ===== FOOTER ===== */
+
     footer {
       border-top: 1px solid var(--border);
       color: var(--muted);
-    } 
-    
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      color: #dfe8f7;
-      font-size: .95rem;
     }
   </style>
 </head>
 
 <body>
-  <!-- NAV -->
+
+  <!-- ==================== NAVBAR ==================== -->
+
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
+
       <a class="navbar-brand fw-bold" href="#">
-        <i class="fa-solid fa-shield-halved me-2"></i>Abdul Kaiyoom
+        <i class="fa-solid fa-shield-halved me-2"></i>
+        Abdul Kaiyoom
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#nav"
+        aria-controls="nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
         <span class="navbar-toggler-icon"></span>
+
       </button>
 
       <div id="nav" class="collapse navbar-collapse">
+
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certs">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">
+              Projects
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">
+              Experience
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#certs">
+              Certifications
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">
+              Skills
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">
+              Contact
+            </a>
+          </li>
+
         </ul>
+
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
+
+  <!-- ==================== HERO ==================== -->
+
   <header class="hero">
+
     <div class="container py-4">
+
       <div class="row gy-4 align-items-center">
+
         <div class="col-lg-8">
-          <h1 class="headline display-5 glow">Mohamed Abdul Kaiyoom</h1>
+
+          <h1 class="headline display-5 glow">
+            Mohamed Abdul Kaiyoom
+          </h1>
+
           <p class="lead mt-2">
-            MSc Cyber Security (Nottingham Trent University, UK) • Cybersecurity Engineer • SIEM • Forensics • IAM • VAPT • PKI • Cloud Security
+            MSc Cyber Security (Nottingham Trent University, UK)
+            • Cybersecurity Engineer
+            • Penetration Testing
+            • VAPT
+            • Vulnerability Assessment
+            • IoT Security
+            • Security Validation
           </p>
 
           <div class="d-flex flex-wrap gap-2">
+
             <a class="btn btn-cta" href="#projects">
-              <i class="fa-solid fa-folder-open me-2"></i>View Projects
+              <i class="fa-solid fa-folder-open me-2"></i>
+              View Projects
             </a>
-            <a class="btn btn-ghost" href="https://github.com/abdulkaiyoom500" target="_blank">
-              <i class="fa-brands fa-github me-2"></i>GitHub
+
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/abdulkaiyoom500"
+              target="_blank">
+
+              <i class="fa-brands fa-github me-2"></i>
+              GitHub
+
             </a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/mohamed-abdul-kaiyoom-haroon-muzammil-348313200/" target="_blank">
-              <i class="fa-brands fa-linkedin me-2"></i>LinkedIn
+
+            <a
+              class="btn btn-ghost"
+              href="https://www.linkedin.com/in/mohamed-abdul-kaiyoom-haroon-muzammil-348313200/"
+              target="_blank">
+
+              <i class="fa-brands fa-linkedin me-2"></i>
+              LinkedIn
+
             </a>
-            <a class="btn btn-ghost" href="resume/Mohamed_Abdul_Kaiyoom_Resume.pdf" download>
-              <i class="fa-solid fa-download me-2"></i>Download Resume
+
+            <a
+              class="btn btn-ghost"
+              href="resume/Mohamed_Abdul_Kaiyoom_Resume.pdf"
+              download>
+
+              <i class="fa-solid fa-download me-2"></i>
+              Download Resume
+
             </a>
+
           </div>
+
         </div>
+
 
         <div class="col-lg-4 text-lg-end text-center">
+
           <span class="avatar-wrap">
-            <!-- Your photo -->
-            <img class="avatar" src="assets/profile.PNG" alt="Profile photo">
+
+            <img
+              class="avatar"
+              src="assets/profile.PNG"
+              alt="Profile photo">
+
           </span>
+
         </div>
+
       </div>
+
     </div>
+
   </header>
 
-  <!-- PROJECTS -->
+
+  <!-- ==================== PROJECTS ==================== -->
+
   <section id="projects" class="section">
+
     <div class="container">
+
       <h2>Projects</h2>
-      <p class="sub">Image-first case studies linking to code & write-ups in GitHub.</p>
+
+      <p class="sub">
+        Security projects demonstrating penetration testing,
+        vulnerability assessment, IoT security, digital forensics,
+        threat monitoring and secure application development.
+      </p>
+
 
       <div class="project-grid mt-3">
+
+
         <!-- 1. Splunk SIEM -->
+
         <article class="cardx span-6">
-          <img class="thumb" src="assets/SIEM.jpg" alt="Splunk dashboards">
+
+          <img
+            class="thumb"
+            src="assets/SIEM.jpg"
+            alt="Splunk dashboards">
+
           <div class="body">
-            <div class="title">SIEM & Threat Monitoring (Splunk)</div>
-            <div class="tagline">Linux log forwarding, brute-force & anomaly dashboards, correlation searches.</div>
-            <a class="btn btn-cta btn-sm me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/splunk-siem">
-              <i class="fa-brands fa-github me-1"></i>GitHub
+
+            <div class="title">
+              SIEM & Threat Monitoring (Splunk)
+            </div>
+
+            <div class="tagline">
+              Linux log forwarding, brute-force & anomaly dashboards,
+              correlation searches and threat monitoring.
+            </div>
+
+            <a
+              class="btn btn-cta btn-sm me-2"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/splunk-siem">
+
+              <i class="fa-brands fa-github me-1"></i>
+              GitHub
+
             </a>
-            <a class="btn btn-ghost btn-sm" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/splunk-siem/README.md">
+
+            <a
+              class="btn btn-ghost btn-sm"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/splunk-siem/README.md">
+
               Case study
+
             </a>
+
           </div>
+
         </article>
+
 
         <!-- 2. Digital Forensics -->
+
         <article class="cardx span-6">
-          <img class="thumb" src="assets/dfir.jpg" alt="USB/Workstation forensics">
+
+          <img
+            class="thumb"
+            src="assets/dfir.jpg"
+            alt="USB and workstation forensics">
+
           <div class="body">
-            <div class="title">Digital Forensics – Workstation & USB</div>
-            <div class="tagline">FTK acquisition with write-blocker, hash verification, Autopsy timelines & report.</div>
-            <a class="btn btn-cta btn-sm me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/digital-forensics-usb">
-              <i class="fa-brands fa-github me-1"></i>GitHub
+
+            <div class="title">
+              Digital Forensics – Workstation & USB
+            </div>
+
+            <div class="tagline">
+              FTK acquisition with write-blocker, hash verification,
+              Autopsy timelines and forensic reporting.
+            </div>
+
+            <a
+              class="btn btn-cta btn-sm me-2"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/digital-forensics-usb">
+
+              <i class="fa-brands fa-github me-1"></i>
+              GitHub
+
             </a>
-            <a class="btn btn-ghost btn-sm" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/digital-forensics-usb/README.md">
+
+            <a
+              class="btn btn-ghost btn-sm"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/digital-forensics-usb/README.md">
+
               Case study
+
             </a>
+
           </div>
+
         </article>
 
-        <!-- 3. Mobile & USB Forensics + Crypto -->
+
+        <!-- 3. Mobile & USB Forensics -->
+
         <article class="cardx span-6">
-          <img class="thumb" src="assets/cellebrite.jpeg" alt="Mobile forensics & crypto tracking">
+
+          <img
+            class="thumb"
+            src="assets/cellebrite.jpeg"
+            alt="Mobile forensics and cryptocurrency tracking">
+
           <div class="body">
-            <div class="title">Mobile & USB Forensics with Cryptocurrency Tracking</div>
-            <div class="tagline">Cellebrite extraction, ExifTool metadata, stego detection, wallet log correlation.</div>
-            <a class="btn btn-cta btn-sm me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/mobile-crypto-forensics">
-              <i class="fa-brands fa-github me-1"></i>GitHub
+
+            <div class="title">
+              Mobile & USB Forensics with Cryptocurrency Tracking
+            </div>
+
+            <div class="tagline">
+              Cellebrite extraction, ExifTool metadata,
+              stego detection and wallet log correlation.
+            </div>
+
+            <a
+              class="btn btn-cta btn-sm me-2"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/mobile-crypto-forensics">
+
+              <i class="fa-brands fa-github me-1"></i>
+              GitHub
+
             </a>
-            <a class="btn btn-ghost btn-sm" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/mobile-crypto-forensics/README.md">
+
+            <a
+              class="btn btn-ghost btn-sm"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/mobile-crypto-forensics/README.md">
+
               Case study
+
             </a>
+
           </div>
+
         </article>
 
-        <!-- 4. Kali/Ubuntu Attack–Defense -->
+
+        <!-- 4. Kali / Ubuntu Attack Defense -->
+
         <article class="cardx span-6">
-          <img class="thumb" src="assets/kali.jpeg" alt="Attack-defense lab">
+
+          <img
+            class="thumb"
+            src="assets/kali.jpeg"
+            alt="Cyber range attack defense lab">
+
           <div class="body">
-            <div class="title">Cyber Range – Kali Linux & Ubuntu Attack-Defense Lab</div>
-            <div class="tagline">Brute-force, DoS, SQLi, XSS, MITM; Snort detection + Ubuntu hardening (UFW).</div>
-            <a class="btn btn-cta btn-sm me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/cyber-range-attack-defense">
-              <i class="fa-brands fa-github me-1"></i>GitHub
+
+            <div class="title">
+              Cyber Range – Kali Linux & Ubuntu Attack-Defense Lab
+            </div>
+
+            <div class="tagline">
+              Brute-force, DoS, SQLi, XSS and MITM testing with
+              Snort detection and Ubuntu hardening.
+            </div>
+
+            <a
+              class="btn btn-cta btn-sm me-2"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/cyber-range-attack-defense">
+
+              <i class="fa-brands fa-github me-1"></i>
+              GitHub
+
             </a>
-            <a class="btn btn-ghost btn-sm" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/cyber-range-attack-defense/README.md">
+
+            <a
+              class="btn btn-ghost btn-sm"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/cyber-range-attack-defense/README.md">
+
               Case study
+
             </a>
+
           </div>
+
         </article>
+
 
         <!-- 5. Secure IoT -->
-        <article class="cardx span-6">
-          <img class="thumb" src="assets/IOT.jpg" alt="Secure IoT / MQTT TLS">
-          <div class="body">
-            <div class="title">Secure IoT Communication Framework (Dissertation)</div>
-            <div class="tagline">Dockerized devices → Mosquitto MQTT over TLS 1.2; Wireshark & OMNeT++ validation.</div>
-            <a class="btn btn-cta btn-sm me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/secure-iot-dissertation">
-              <i class="fa-brands fa-github me-1"></i>GitHub
-            </a>
-            <a class="btn btn-ghost btn-sm" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/secure-iot-dissertation/README.md">
-              Case study
-            </a>
-          </div>
-        </article>
 
-        <!-- 6. ASP.NET E-commerce -->
         <article class="cardx span-6">
-          <img class="thumb" src="assets/ECOMMERCE.jpg" alt="ASP.NET E-commerce">
-          <div class="body">
-            <div class="title">E-Commerce Websites (ASP.NET, C#)</div>
-            <div class="tagline">Razor Pages apps with SQL auth (login/register), product catalog & checkout.</div>
-            <a class="btn btn-cta btn-sm me-2" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/ecommerce-aspnet">
-              <i class="fa-brands fa-github me-1"></i>GitHub
-            </a>
-            <a class="btn btn-ghost btn-sm" target="_blank" href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/ecommerce-aspnet/README.md">
-              Case study
-            </a>
-          </div>
-        </article>
 
-        <!-- 7. AI-Enabled Valentine’s Dating & Interactive Lock Platform -->
-        <article class="cardx span-6">
-          <img class="thumb" src="assets/LoveMapLogo.jpeg" alt="AI dating and interactive lock platform">
+          <img
+            class="thumb"
+            src="assets/IOT.jpg"
+            alt="Secure IoT MQTT TLS">
+
           <div class="body">
-            <div class="title">AI-Enabled Valentine’s Dating & Interactive Lock Platform</div>
-            <div class="tagline">
-              Built with React.js, Supabase, PostgreSQL, Auth, real-time messaging, geolocation matching, PayPal integration, Resend email verification, DNS setup, and Vercel CI/CD deployment.
+
+            <div class="title">
+              Secure IoT Communication Framework (Dissertation)
             </div>
-            <a class="btn btn-cta btn-sm me-2" target="_blank" href="https://github.com/abdulkaiyoom500/love-lock-app">
-              <i class="fa-brands fa-github me-1"></i>GitHub
+
+            <div class="tagline">
+              Dockerized devices, Mosquitto MQTT over TLS 1.2,
+              Wireshark traffic analysis and OMNeT++ validation.
+            </div>
+
+            <a
+              class="btn btn-cta btn-sm me-2"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/secure-iot-dissertation">
+
+              <i class="fa-brands fa-github me-1"></i>
+              GitHub
+
             </a>
-            <a class="btn btn-ghost btn-sm" target="_blank" href="https://love-map.world">
-              Live Demo
+
+            <a
+              class="btn btn-ghost btn-sm"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/secure-iot-dissertation/README.md">
+
+              Case study
+
             </a>
+
           </div>
+
         </article>
+
+
+        <!-- 6. ASP.NET E-Commerce -->
+
+        <article class="cardx span-6">
+
+          <img
+            class="thumb"
+            src="assets/ECOMMERCE.jpg"
+            alt="ASP.NET E-commerce">
+
+          <div class="body">
+
+            <div class="title">
+              E-Commerce Websites (ASP.NET, C#)
+            </div>
+
+            <div class="tagline">
+              Razor Pages applications with SQL authentication,
+              product catalogue and checkout functionality.
+            </div>
+
+            <a
+              class="btn btn-cta btn-sm me-2"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/tree/main/cybersecurity-projects-starter/cybersecurity-projects/ecommerce-aspnet">
+
+              <i class="fa-brands fa-github me-1"></i>
+              GitHub
+
+            </a>
+
+            <a
+              class="btn btn-ghost btn-sm"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/abdul-cyber-portfolio/blob/main/cybersecurity-projects-starter/cybersecurity-projects/ecommerce-aspnet/README.md">
+
+              Case study
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 7. AI Valentine / Interactive Lock -->
+
+        <article class="cardx span-6">
+
+          <img
+            class="thumb"
+            src="assets/LoveMapLogo.jpeg"
+            alt="AI dating and interactive lock platform">
+
+          <div class="body">
+
+            <div class="title">
+              AI-Enabled Valentine’s Dating & Interactive Lock Platform
+            </div>
+
+            <div class="tagline">
+              React.js, Supabase, PostgreSQL, authentication,
+              real-time messaging, PayPal, Resend, DNS and Vercel CI/CD.
+            </div>
+
+            <a
+              class="btn btn-cta btn-sm me-2"
+              target="_blank"
+              href="https://github.com/abdulkaiyoom500/love-lock-app">
+
+              <i class="fa-brands fa-github me-1"></i>
+              GitHub
+
+            </a>
+
+            <a
+              class="btn btn-ghost btn-sm"
+              target="_blank"
+              href="https://love-map.world">
+
+              Live Demo
+
+            </a>
+
+          </div>
+
+        </article>
+
+
       </div>
+
     </div>
+
   </section>
 
-  
 
-  <!-- EXPERIENCE -->
+  <!-- ==================== EXPERIENCE ==================== -->
+
   <section id="experience" class="section">
+
     <div class="container">
+
       <h2>Experience</h2>
+
       <div class="timeline mt-2">
+
+
+        <!-- Paramount -->
+
         <div class="t-item">
+
           <div class="d-flex flex-wrap justify-content-between">
+
             <div>
-              <div class="role">Software Engineer</div>
-              <div class="company">HCL Technologies, Chennai — Client: USAA</div>
+
+              <div class="role">
+                Cybersecurity Intern
+              </div>
+
+              <div class="company">
+                Paramount Computer Systems
+              </div>
+
             </div>
-            <div class="when">Dec 2021 – Aug 2023</div>
+
+            <div class="when">
+              Nov 2025 – Dec 2025
+            </div>
+
           </div>
+
 
           <ul class="mt-2">
-            <li>Supported enterprise applications in a regulated financial environment, ensuring secure API integrations and adherence to secure coding standards.</li>
-            <li>Worked with backend systems processing sensitive customer and beneficiary data, supporting secure data validation and handling.</li>
-            <li>Performed application testing and validation, identifying functional defects and potential security issues during development and integration.</li>
-            <li>Documented APIs and system integrations, improving traceability, configuration clarity, and secure deployment practices.</li>
-            <li>Collaborated in Agile teams using Jira, following enterprise governance, change management, and structured development workflows.</li>
+
+            <li>
+              Performed <b>vulnerability assessments and penetration testing</b>
+              using Nmap, Nessus, Burp Suite and Rapid7 InsightVM.
+            </li>
+
+            <li>
+              Identified and validated <b>OWASP Top 10 vulnerabilities,
+              security misconfigurations and authentication weaknesses</b>,
+              followed by remediation re-testing.
+            </li>
+
+            <li>
+              Analysed IOCs using <b>VirusTotal and AbuseIPDB</b>
+              to support security investigations and threat analysis.
+            </li>
+
+            <li>
+              Documented findings in structured <b>VAPT reports</b>,
+              providing evidence and actionable remediation recommendations.
+            </li>
+
           </ul>
+
         </div>
+
+
+        <!-- HCL -->
+
+        <div class="t-item">
+
+          <div class="d-flex flex-wrap justify-content-between">
+
+            <div>
+
+              <div class="role">
+                Software Engineer
+              </div>
+
+              <div class="company">
+                HCL Technologies, Chennai — Client: USAA
+              </div>
+
+            </div>
+
+            <div class="when">
+              Dec 2021 – Aug 2023
+            </div>
+
+          </div>
+
+
+          <ul class="mt-2">
+
+            <li>
+              Performed <b>API testing and validation</b> using Postman,
+              identifying input-validation weaknesses and potential
+              security issues in backend services.
+            </li>
+
+            <li>
+              Analysed JSON responses, application workflows and backend
+              behaviour to identify <b>improper data handling and
+              logical vulnerabilities</b>.
+            </li>
+
+            <li>
+              Conducted unit and functional testing using
+              <b>JUnit and Mockito</b>, supporting secure application
+              behaviour and reducing exploitable defects.
+            </li>
+
+            <li>
+              Collaborated in Agile engineering teams using Jira,
+              contributing to <b>technical documentation and secure
+              development lifecycle</b> activities.
+            </li>
+
+          </ul>
+
+        </div>
+
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- CERTIFICATIONS -->
+
+  <!-- ==================== CERTIFICATIONS ==================== -->
+
   <section id="certs" class="section">
+
     <div class="container">
+
       <h2>Certifications</h2>
+
       <ul class="mt-2">
-        <li><b>Certified in Cybersecurity</b> — ISC2</li>
-        <li><b>Certified Ethical Hacker</b> — Cisco</li>
-        <li><b>Certified Junior Cybersecurity Analyst</b> — Cisco</li>
-        <li><b>Introduction to Cybersecurity</b> — Cisco</li>
-        <li><b>Cyber Threat Intelligence 101</b> — ArcX</li>
-        <li><b>Fortinet NSE1 Security Fundamentals</b> — Fortinet</li>
-        <li><b>Certified Ethical Hacker</b> — Issued by MSME</li>
-        <li><b>CompTIA Security+</b> — Ongoing</li>
-        <li><b>Certified Salesforce Administrator</b> — Issued by Salesforce</li>
-        <li><b>Certified Salesforce Platform Developer I</b> — Issued by Salesforce</li>
-        <li><b>SAFe 6 Practitioner</b> — Issued by Scaled Agile</li>
+
+        <li>
+          <b>Certified in Cybersecurity</b> — ISC2
+        </li>
+
+        <li>
+          <b>Certified Ethical Hacker</b> — Cisco
+        </li>
+
+        <li>
+          <b>Certified Junior Cybersecurity Analyst</b> — Cisco
+        </li>
+
+        <li>
+          <b>Introduction to Cybersecurity</b> — Cisco
+        </li>
+
+        <li>
+          <b>Cyber Threat Intelligence 101</b> — ArcX
+        </li>
+
+        <li>
+          <b>Fortinet NSE1 Security Fundamentals</b> — Fortinet
+        </li>
+
+        <li>
+          <b>Certified Ethical Hacker</b> — Issued by MSME
+        </li>
+
+        <li>
+          <b>CompTIA Security+</b> — Ongoing
+        </li>
+
+        <li>
+          <b>Certified Salesforce Administrator</b> — Salesforce
+        </li>
+
+        <li>
+          <b>Certified Salesforce Platform Developer I</b> — Salesforce
+        </li>
+
+        <li>
+          <b>SAFe 6 Practitioner</b> — Scaled Agile
+        </li>
+
       </ul>
+
     </div>
+
   </section>
 
-  <!-- SKILLS -->
+
+  <!-- ==================== SKILLS ==================== -->
+
   <section id="skills" class="section">
+
     <div class="container">
+
       <h2>Skills</h2>
-      <p class="sub">Security operations, network defense, cloud security & full-stack fundamentals.</p>
+
+      <p class="sub">
+        Penetration testing, vulnerability assessment,
+        security validation & connected-system security.
+      </p>
+
 
       <div class="skills-groups">
-        <h5 class="group-title"><i class="fa-solid fa-screwdriver-wrench me-2"></i>Security Tools & Platforms</h5>
+
+
+        <!-- Penetration Testing -->
+
+        <h5 class="group-title">
+          <i class="fa-solid fa-user-secret me-2"></i>
+          Penetration Testing & Security Tools
+        </h5>
+
         <div class="chips">
-          <span class="chip"><i class="fa-solid fa-wave-square"></i> Wireshark</span>
-          <span class="chip"><i class="fa-solid fa-network-wired"></i> Nmap</span>
-          <span class="chip"><i class="fa-solid fa-magnifying-glass"></i> Autopsy</span>
-          <span class="chip"><i class="fa-solid fa-mobile-screen-button"></i> Cellebrite Physical Analyzer</span>
-          <span class="chip"><i class="fa-brands fa-docker"></i> Docker</span>
-          <span class="chip"><i class="fa-solid fa-desktop"></i> VMware</span>
-          <span class="chip"><i class="fa-solid fa-laptop"></i> VirtualBox</span>
-          <span class="chip"><i class="fa-solid fa-diagram-project"></i> OMNeT++</span>
-          <span class="chip"><i class="fa-solid fa-spider"></i> Burp Suite</span>
-          <span class="chip"><i class="fa-solid fa-shield-halved"></i> OWASP ZAP</span>
-          <span class="chip"><i class="fa-solid fa-bullseye"></i> Nessus</span>
-          <span class="chip"><i class="fa-solid fa-eye"></i> Splunk</span>
-          <span class="chip"><i class="fa-solid fa-flask"></i> DVWA</span>
-          <span class="chip"><i class="fa-solid fa-wifi"></i> Mosquitto MQTT Broker</span>
+
+          <span class="chip">
+            <i class="fa-solid fa-network-wired"></i>
+            Nmap
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-spider"></i>
+            Burp Suite
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-bullseye"></i>
+            Nessus
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-chart-line"></i>
+            Rapid7 InsightVM
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-crosshairs"></i>
+            Metasploit
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-database"></i>
+            SQLmap
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-shield-halved"></i>
+            OWASP ZAP
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Nikto
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-folder-tree"></i>
+            Gobuster
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-key"></i>
+            Hydra
+          </span>
+
         </div>
 
-        <h5 class="group-title"><i class="fa-solid fa-shield-halved me-2"></i>Cybersecurity</h5>
+
+        <!-- Cybersecurity -->
+
+        <h5 class="group-title">
+          <i class="fa-solid fa-shield-halved me-2"></i>
+          Cybersecurity
+        </h5>
+
         <div class="chips">
-          <span class="chip"><i class="fa-solid fa-fingerprint"></i> Digital Forensics</span>
-          <span class="chip"><i class="fa-solid fa-triangle-exclamation"></i> Vulnerability Assessment</span>
-          <span class="chip"><i class="fa-solid fa-user-ninja"></i> Penetration Testing</span>
-          <span class="chip"><i class="fa-solid fa-network-wired"></i> Traffic Analysis</span>
-          <span class="chip"><i class="fa-solid fa-headset"></i> Incident Response</span>
-          <span class="chip"><i class="fa-solid fa-eye"></i> SIEM (Splunk, Wazuh)</span>
-          <span class="chip"><i class="fa-solid fa-key"></i> PKI</span>
-          <span class="chip"><i class="fa-solid fa-lock"></i> SSL/TLS</span>
-          <span class="chip"><i class="fa-solid fa-bolt"></i> MITM & DoS Simulation</span>
-          <span class="chip"><i class="fa-solid fa-shield"></i> IDS/IPS (Snort, Suricata)</span>
-          <span class="chip"><i class="fa-solid fa-network-wired"></i> Networking, VPN, FW</span>
+
+          <span class="chip">
+            <i class="fa-solid fa-user-secret"></i>
+            Penetration Testing
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Vulnerability Assessment
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-file-shield"></i>
+            VAPT
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Vulnerability Analysis
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-check-double"></i>
+            Remediation Validation
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-shield"></i>
+            Security Validation
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-burst"></i>
+            Attack Simulation
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-list-check"></i>
+            OWASP Top 10
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-code"></i>
+            SAST / DAST
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            Secure SDLC
+          </span>
+
         </div>
 
-        <h5 class="group-title"><i class="fa-solid fa-cloud me-2"></i>Cloud & Infrastructure Security</h5>
+
+        <!-- Networking -->
+
+        <h5 class="group-title">
+          <i class="fa-solid fa-network-wired me-2"></i>
+          Networking & Connected Systems
+        </h5>
+
         <div class="chips">
-          <span class="chip"><i class="fa-solid fa-user-lock"></i> AWS IAM</span>
-          <span class="chip"><i class="fa-solid fa-route"></i> CloudTrail</span>
-          <span class="chip"><i class="fa-solid fa-shield-halved"></i> GuardDuty</span>
-          <span class="chip"><i class="fa-solid fa-database"></i> S3 Encryption</span>
-          <span class="chip"><i class="fa-solid fa-fire"></i> Firewall Hardening</span>
-          <span class="chip"><i class="fa-solid fa-user-lock"></i> Identity & Access Management</span>
+
+          <span class="chip">
+            <i class="fa-solid fa-network-wired"></i>
+            TCP/IP
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-globe"></i>
+            HTTP/S
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-server"></i>
+            DNS
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Port Scanning
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-list"></i>
+            Service Enumeration
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-wave-square"></i>
+            Wireshark
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-wifi"></i>
+            MQTT
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-lock"></i>
+            TLS 1.2
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-key"></i>
+            AES-CCM
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-person-running"></i>
+            MITM Testing
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-bolt"></i>
+            DoS Testing
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-microchip"></i>
+            IoT Security
+          </span>
+
         </div>
 
-        <h5 class="group-title"><i class="fa-solid fa-code me-2"></i>Programming & Web Development</h5>
+
+        <!-- Programming -->
+
+        <h5 class="group-title">
+          <i class="fa-solid fa-code me-2"></i>
+          Programming & Scripting
+        </h5>
+
         <div class="chips">
-          <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
-          <span class="chip"><i class="fa-brands fa-java"></i> Java</span>
-          <span class="chip"><i class="fa-brands fa-microsoft"></i> C#</span>
-          <span class="chip"><i class="fa-solid fa-database"></i> SQL</span>
-          <span class="chip"><i class="fa-brands fa-html5"></i> HTML</span>
-          <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS</span>
-          <span class="chip"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
-          <span class="chip"><i class="fa-brands fa-windows"></i> ASP.NET Core</span>
-          <span class="chip"><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+
+          <span class="chip">
+            <i class="fa-brands fa-python"></i>
+            Python
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-terminal"></i>
+            Bash
+          </span>
+
+          <span class="chip">
+            <i class="fa-brands fa-windows"></i>
+            PowerShell
+          </span>
+
+          <span class="chip">
+            <i class="fa-brands fa-java"></i>
+            Java
+          </span>
+
+          <span class="chip">
+            <i class="fa-brands fa-microsoft"></i>
+            C#
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-database"></i>
+            SQL
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-window-maximize"></i>
+            ASP.NET Core
+          </span>
+
         </div>
 
-        <h5 class="group-title"><i class="fa-solid fa-scale-balanced me-2"></i>Concepts & Standards</h5>
+
+        <!-- Operating Systems -->
+
+        <h5 class="group-title">
+          <i class="fa-solid fa-server me-2"></i>
+          Operating Systems & Security Platforms
+        </h5>
+
         <div class="chips">
-          <span class="chip"><i class="fa-solid fa-list-check"></i> OWASP Top 10</span>
-          <span class="chip"><i class="fa-solid fa-repeat"></i> Secure SDLC</span>
-          <span class="chip"><i class="fa-solid fa-key"></i> Cryptography</span>
-          <span class="chip"><i class="fa-solid fa-certificate"></i> ISO 27001 (basic)</span>
-          <span class="chip"><i class="fa-solid fa-clipboard-check"></i> Compliance & Risk Assessment</span>
-          <span class="chip"><i class="fa-solid fa-landmark"></i> NIST</span>
+
+          <span class="chip">
+            <i class="fa-brands fa-linux"></i>
+            Kali Linux
+          </span>
+
+          <span class="chip">
+            <i class="fa-brands fa-ubuntu"></i>
+            Ubuntu
+          </span>
+
+          <span class="chip">
+            <i class="fa-brands fa-windows"></i>
+            Windows
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-eye"></i>
+            Splunk
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-shield"></i>
+            Wazuh
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-radar"></i>
+            Snort
+          </span>
+
+          <span class="chip">
+            <i class="fa-brands fa-docker"></i>
+            Docker
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-desktop"></i>
+            VMware
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-laptop"></i>
+            VirtualBox
+          </span>
+
         </div>
+
+
+        <!-- Additional Security -->
+
+        <h5 class="group-title">
+          <i class="fa-solid fa-magnifying-glass me-2"></i>
+          Additional Security
+        </h5>
+
+        <div class="chips">
+
+          <span class="chip">
+            <i class="fa-solid fa-fingerprint"></i>
+            Digital Forensics
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-headset"></i>
+            Incident Response
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-crosshairs"></i>
+            IOC Analysis
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-key"></i>
+            PKI
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-lock"></i>
+            Cryptography
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-certificate"></i>
+            SSL/TLS
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-user-lock"></i>
+            AWS IAM
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-clock"></i>
+            CloudTrail
+          </span>
+
+          <span class="chip">
+            <i class="fa-solid fa-shield-halved"></i>
+            GuardDuty
+          </span>
+
+        </div>
+
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- CONTACT -->
+
+  <!-- ==================== CONTACT ==================== -->
+
   <section id="contact" class="section">
+
     <div class="container">
+
       <h2>Contact</h2>
 
+
       <div class="row g-3 align-items-stretch">
-        <!-- Text-only contact details (no email button) -->
+
+
+        <!-- Contact Details -->
+
         <div class="col-lg-6">
-          <div class="p-3 rounded-3 h-100" style="border:1px solid var(--border); background: rgba(255,255,255,.03);">
+
+          <div
+            class="p-3 rounded-3 h-100"
+            style="
+              border:1px solid var(--border);
+              background:rgba(255,255,255,.03);
+            ">
+
             <p class="mb-2">
-              <i class="fa-solid fa-envelope me-2"></i>Email:
-              <span class="text-white">abdulkaiyoomwork@gmail.com</span>
+
+              <i class="fa-solid fa-envelope me-2"></i>
+
+              Email:
+
+              <span class="text-white">
+                abdulkaiyoomwork@gmail.com
+              </span>
+
             </p>
+
+
             <p class="mb-0">
-              <i class="fa-solid fa-phone me-2"></i>Mobile:
-              <span class="text-white">+971 562393433</span> /
-              <span class="text-white">+44 7423 082436</span> /
-              <span class="text-white">+91 97911 28077</span>
+
+              <i class="fa-solid fa-phone me-2"></i>
+
+              Mobile:
+
+              <span class="text-white">
+                +971 562393433
+              </span>
+
+              /
+
+              <span class="text-white">
+                +44 7423 082436
+              </span>
+
+              /
+
+              <span class="text-white">
+                +91 97911 28077
+              </span>
+
             </p>
+
           </div>
+
         </div>
 
-        <!-- Keep GitHub/LinkedIn buttons -->
-        <div class="col-lg-3">
-          <a class="btn w-100 btn-ghost h-100 d-flex align-items-center justify-content-center" target="_blank" href="https://github.com/abdulkaiyoom500">
-            <i class="fa-brands fa-github me-2"></i>GitHub
-          </a>
-        </div>
+
+        <!-- GitHub -->
 
         <div class="col-lg-3">
-          <a class="btn w-100 btn-ghost h-100 d-flex align-items-center justify-content-center" target="_blank" href="https://www.linkedin.com/in/mohamed-abdul-kaiyoom-haroon-muzammil-348313200/">
-            <i class="fa-brands fa-linkedin me-2"></i>LinkedIn
+
+          <a
+            class="btn w-100 btn-ghost h-100 d-flex align-items-center justify-content-center"
+            target="_blank"
+            href="https://github.com/abdulkaiyoom500">
+
+            <i class="fa-brands fa-github me-2"></i>
+            GitHub
+
           </a>
+
         </div>
+
+
+        <!-- LinkedIn -->
+
+        <div class="col-lg-3">
+
+          <a
+            class="btn w-100 btn-ghost h-100 d-flex align-items-center justify-content-center"
+            target="_blank"
+            href="https://www.linkedin.com/in/mohamed-abdul-kaiyoom-haroon-muzammil-348313200/">
+
+            <i class="fa-brands fa-linkedin me-2"></i>
+            LinkedIn
+
+          </a>
+
+        </div>
+
+
       </div>
+
     </div>
+
   </section>
 
+
+  <!-- ==================== FOOTER ==================== -->
+
   <footer class="py-4 text-center">
-    <div class="container small">© <span id="year"></span> Mohamed Abdul Kaiyoom — Cybersecurity Portfolio</div>
+
+    <div class="container small">
+
+      ©
+      <span id="year"></span>
+      Mohamed Abdul Kaiyoom — Cybersecurity Portfolio
+
+    </div>
+
   </footer>
+
+
+  <!-- Bootstrap -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth anchor scroll with navbar offset
-    document.querySelectorAll('a.nav-link[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if (el) {
-          window.scrollTo({
-            top: el.offsetTop - 70,
-            behavior: 'smooth'
-          });
-        }
+  <!-- ==================== SCRIPTS ==================== -->
+
+  <script>
+
+    /* Dynamic year */
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+
+    /* Smooth anchor scrolling */
+
+    document
+      .querySelectorAll('a.nav-link[href^="#"]')
+      .forEach(a => {
+
+        a.addEventListener('click', e => {
+
+          e.preventDefault();
+
+          const id =
+            a.getAttribute('href').slice(1);
+
+          const el =
+            document.getElementById(id);
+
+          if (el) {
+
+            window.scrollTo({
+
+              top: el.offsetTop - 70,
+
+              behavior: 'smooth'
+
+            });
+
+          }
+
+        });
+
       });
-    });
+
   </script>
+
 </body>
 </html>
